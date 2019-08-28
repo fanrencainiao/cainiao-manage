@@ -14,11 +14,10 @@ import java.io.PrintWriter;
 
 /**
  * 
- * @项目名称：wyait-manager
+ * @项目名称：cainiao-manager
  * @类名称：ShiroFilterUtils
  * @类描述：shiro工具类
- * @创建人：wyait
- * @创建时间：2018年4月24日 下午5:12:04 
+ * @创建人：cainiao
  * @version：
  */
 public class ShiroFilterUtils {

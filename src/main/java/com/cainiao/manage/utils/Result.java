@@ -2,11 +2,10 @@ package com.cainiao.manage.utils;
 
 /**
  * 
- * @项目名称：wyait-manage
+ * @项目名称：cainiao-manage
  * @类名称：Result
  * @类描述：http请求返回的对象
- * @创建人：wyait
- * @创建时间：2018年6月5日 下午4:40:52 
+ * @创建人：cainiao
  * @version：
  */
 public class Result<T> {

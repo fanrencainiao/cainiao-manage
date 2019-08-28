@@ -34,7 +34,7 @@ import java.util.Map;
  * @项目名称：common
  * @类名称：ApiService
  * @类描述：负责和外部接口对接，发起http请求
- * @创建人：wyait
+ * @创建人：cainiao
  * @创建时间：2015年10月13日 下午2:55:09 
  * @version：1.0.0
  */
@@ -50,8 +50,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：发送不带参数的GET请求，返回String类型数据
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:55:42
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @return
 	 * @throws ClientProtocolException
@@ -80,8 +79,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：带参数的GET请求，返回String类型数据
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:56:06
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param param 请求参数
 	 * @return
@@ -137,8 +135,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：带有参数的GET请求，返回HttpResult
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:57:08
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param param 请求参数
 	 * @return
@@ -160,8 +157,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：指定POST请求
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:57:31
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param param 请求参数
 	 * @return 状态码和请求的body
@@ -205,8 +201,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：指定POST请求
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:57:31
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param param 请求参数
 	 * @return 状态码和请求的body
@@ -251,8 +246,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：执行PUT请求
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:58:08
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param param 请求参数
 	 * @return 状态码和请求的body
@@ -297,8 +291,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：指定POST请求
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:58:46
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param json 请求参数
 	 * @return
@@ -336,8 +329,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：没有参数的post请求
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:59:26
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @return
 	 * @throws IOException
@@ -349,8 +341,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：执行PUT请求
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:59:46
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @return 状态码和请求的body
 	 * @throws IOException
@@ -362,8 +353,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：执行DELETE请求,通过POST提交，_method指定真正的请求方法
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午3:00:10
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @param param 请求参数
 	 * @return 状态码和请求的body
@@ -378,8 +368,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：执行DELETE请求(真正的DELETE请求)
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午3:00:36
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @return 状态码和请求的body
 	 * @throws IOException
@@ -408,8 +397,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：httpCilent多图片上传和多个参数
-	 * @创建人：wyait
-	 * @创建时间：2017年5月2日 下午1:47:41
+	 * @创建人：cainiao
 	 * @param url
 	 * @param params
 	 * @param files file对象必须包含图片地址

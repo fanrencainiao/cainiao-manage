@@ -10,7 +10,7 @@ public class SendMsgServer {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(SendMsgServer.class);
-
+	
 	/**
 	 * 
 	 * @描述：(公共)发送短消息:

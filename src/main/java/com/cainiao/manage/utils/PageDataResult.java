@@ -4,11 +4,10 @@ import java.util.List;
 
 /**
  *
- * @项目名称：wyait-manage
+ * @项目名称：cainiao-manage
  * @类名称：PageDateResult
  * @类描述：封装DTO分页数据（记录数和所有记录）
- * @创建人：wyait
- * @创建时间：2017年12月31日14:49:34
+ * @创建人：cainiao
  * @version：2.0.0
  */
 public class PageDataResult {

@@ -24,11 +24,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 
- * @项目名称：wyait-manage
+ * @项目名称：cainiao-manage
  * @类名称：UserActionInterceptor
  * @类描述：判断用户信息是否已被后台更改，并根据更改的情况做对应的处理
- * @创建人：wyait
- * @创建时间：2018年5月2日 上午9:36:43 
+ * @创建人：cainiao
  * @version：
  */
 public class UserActionInterceptor implements HandlerInterceptor {

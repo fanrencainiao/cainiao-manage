@@ -29,11 +29,10 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * @项目名称：wyait-manage
+ * @项目名称：cainiao-manage
  * @类名称：KickoutSessionFilter
  * @类描述：自定义过滤器，进行用户访问控制
- * @创建人：wyait
- * @创建时间：2018年4月24日 下午5:18:29
+ * @创建人：cainiao
  * @version：
  */
 public class KickoutSessionFilter extends AccessControlFilter {
