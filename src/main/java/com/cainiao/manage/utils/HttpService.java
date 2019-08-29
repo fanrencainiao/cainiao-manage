@@ -102,8 +102,7 @@ public class HttpService {
 	/**
 	 *
 	 * @描述：执行DoGET请求，返回HttpResult
-	 * @创建人：wyait
-	 * @创建时间：2015年10月13日 下午2:56:28
+	 * @创建人：cainiao
 	 * @param url 请求地址
 	 * @return 如果响应是200，返回具体的响应内容，其他响应返回null
 	 * @throws ClientProtocolException
