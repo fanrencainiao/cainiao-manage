@@ -1,17 +1,22 @@
 package com.cainiao.manage.web.zx;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cainiao.manage.common.DateUtil;
 import com.cainiao.manage.common.ValidateUtil;
 import com.cainiao.manage.entity.ResponseResult;
 import com.cainiao.manage.entity.UserDTO;
 import com.cainiao.manage.entity.UserRolesVO;
 import com.cainiao.manage.entity.UserSearchDTO;
+import com.cainiao.manage.pojo.Pic;
 import com.cainiao.manage.pojo.Role;
 import com.cainiao.manage.pojo.User;
 import com.cainiao.manage.service.AuthService;
+import com.cainiao.manage.service.IPicService;
 import com.cainiao.manage.service.UserService;
 import com.cainiao.manage.utils.IStatusMessage;
 import com.cainiao.manage.utils.PageDataResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 import net.sf.oval.ConstraintViolation;
 import net.sf.oval.Validator;
@@ -58,24 +63,26 @@ public class ZhuangxiuController {
 	private AuthService authService;
 	@Autowired
 	private EhCacheManager ecm;
+	@Autowired
+	private IPicService picServer;
 
 	//private static final Pattern MOBILE_PATTERN = Pattern.compile("^1\\d{10}$");
 
 	@RequestMapping("/pic")
 	public String toUserList() {
-		return "/auth/userList";
+		return "/zhuangxiu/pic";
 	}
 
 	/**
-	 * 分页查询用户列表
+	 * 分页查询图文列表
 	 * @return ok/fail
 	 */
-	@RequestMapping(value = "/getUsers", method = RequestMethod.POST)
+	@RequestMapping(value = "/getPic", method = RequestMethod.POST)
 	@ResponseBody
-	@RequiresPermissions(value = "usermanage")
+	@RequiresPermissions(value = "picManager")
 	public PageDataResult getUsers(@RequestParam("page") Integer page,
-			@RequestParam("limit") Integer limit, UserSearchDTO userSearch) {
-		logger.debug("分页查询用户列表！搜索条件：userSearch：" + userSearch + ",page:" + page
+			@RequestParam("limit") Integer limit) {
+		logger.debug("分页查询用户列表！搜索条件：page:" + page
 				+ ",每页记录数量limit:" + limit);
 		PageDataResult pdr = new PageDataResult();
 		try {
@@ -85,13 +92,21 @@ public class ZhuangxiuController {
 			if (null == limit) {
 				limit = 10;
 			}
-			// 获取用户和角色列表
-			pdr = userService.getUsers(userSearch, page, limit);
-			logger.debug("用户列表查询=pdr:" + pdr);
+			// 获取列表
+			PageHelper.startPage(page, limit);
+			Pic p=new Pic();
+			p.setState(1);
+			QueryWrapper<Pic> q=new QueryWrapper<>(p);
+			
+			List<Pic> list = picServer.list(q);
+			PageInfo<Pic> pageInfo = new PageInfo<>(list);
+			pdr.setTotals(Long.valueOf(pageInfo.getTotal()).intValue());
+			pdr.setList(list);
+			logger.debug("图文列表查询=pdr:" + pdr);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.error("用户列表查询异常！", e);
+			logger.error("图文列表查询异常！", e);
 		}
 		return pdr;
 	}

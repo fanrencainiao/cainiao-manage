@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
+
 import javax.sql.DataSource;
 
 /**
@@ -46,7 +48,7 @@ public class DataSourceConfig {
 	@Bean(name = "testSqlSessionFactory")
 	@Primary
 	public SqlSessionFactory testSqlSessionFactory(@Qualifier("testDataSource") DataSource dataSource) throws Exception {
-		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+		MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
 		bean.setDataSource(dataSource);
 		//对应mybatis.type-aliases-package配置
 		bean.setTypeAliasesPackage("com.cainiao.manage.pojo");
