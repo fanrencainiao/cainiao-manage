@@ -1,6 +1,7 @@
 package com.cainiao.manage.web.zx;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.cainiao.manage.common.DateUtil;
 import com.cainiao.manage.common.ValidateUtil;
 import com.cainiao.manage.entity.ResponseResult;
@@ -11,7 +12,7 @@ import com.cainiao.manage.pojo.Pic;
 import com.cainiao.manage.pojo.Role;
 import com.cainiao.manage.pojo.User;
 import com.cainiao.manage.service.AuthService;
-import com.cainiao.manage.service.IPicService;
+import com.cainiao.manage.service.PicService;
 import com.cainiao.manage.service.UserService;
 import com.cainiao.manage.utils.IStatusMessage;
 import com.cainiao.manage.utils.PageDataResult;
@@ -64,7 +65,7 @@ public class ZhuangxiuController {
 	@Autowired
 	private EhCacheManager ecm;
 	@Autowired
-	private IPicService picServer;
+	private PicService picServer;
 
 	//private static final Pattern MOBILE_PATTERN = Pattern.compile("^1\\d{10}$");
 
@@ -96,9 +97,8 @@ public class ZhuangxiuController {
 			PageHelper.startPage(page, limit);
 			Pic p=new Pic();
 			p.setState(1);
-			QueryWrapper<Pic> q=new QueryWrapper<>(p);
-			
-			List<Pic> list = picServer.list(q);
+			EntityWrapper<Pic> ew =new EntityWrapper<Pic>(p);
+			List<Pic> list = picServer.selectList(null);
 			PageInfo<Pic> pageInfo = new PageInfo<>(list);
 			pdr.setTotals(Long.valueOf(pageInfo.getTotal()).intValue());
 			pdr.setList(list);

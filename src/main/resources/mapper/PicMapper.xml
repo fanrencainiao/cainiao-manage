@@ -2,4 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cainiao.manage.dao.PicMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cainiao.manage.pojo.Pic">
+        <id column="id" property="id" />
+        <result column="picClass" property="picClass" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="imgUrls" property="imgUrls" />
+        <result column="state" property="state" />
+        <result column="type" property="type" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+        <result column="version" property="version" />
+    </resultMap>
+
 </mapper>

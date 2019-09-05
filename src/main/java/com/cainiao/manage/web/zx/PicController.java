@@ -3,21 +3,19 @@ package com.cainiao.manage.web.zx;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import groovy.util.logging.Log4j;
+import org.springframework.stereotype.Controller;
 
 /**
-
- * @author cf
- * @since 2019-09-04
+ * <p>
+ *  前端控制器
+ * </p>
+ *
+ * @author cf123
+ * @since 2019-09-05
  */
-@RestController
+@Controller
 @RequestMapping("/pic")
-@Log4j
 public class PicController {
-	
-	
-	
-	
+
 }
+
